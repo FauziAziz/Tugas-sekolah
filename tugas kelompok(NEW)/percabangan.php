@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tolong buatkan kodingan php tentang SEMUA percabangan LENGKAP seperti if else, if, else, switch. ini semua harus ada</title>
+    <title>percabangan</title>
 </head>
 <body>
      <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
