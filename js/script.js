@@ -97,7 +97,7 @@ function setupLoginForm() {
             
             // Simulasi login berhasil
             // Di aplikasi nyata, ini akan memeriksa ke backend
-            if (email === 'admin@sitta.ut.ac.id' && password === 'password123') {
+            if (email === 'admin@uzi.com' && password === 'pass123') {
                 window.location.href = 'dashboard.html';
             } else {
                 alert('Email/password yang anda masukkan salah');
