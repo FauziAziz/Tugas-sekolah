@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Lengkap CSS</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.8; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; text-align: center; border-bottom: 3px solid #9b59b6; padding-bottom: 10px; }
+        h2 { color: #8e44ad; margin-top: 30px; }
+        h3 { color: #9b59b6; margin-top: 20px; }
+        .konsep { background: #f4ecf7; padding: 15px; border-left: 4px solid #9b59b6; margin: 15px 0; }
+        .contoh { background: #fdf2e9; border: 1px solid #f5cba7; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-family: 'Courier New', monospace; }
+        pre { background: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        .tabel { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .tabel th, .tabel td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        .tabel th { background-color: #9b59b6; color: white; }
+        .box-model { width: 200px; height: 100px; background: #d7bde2; border: 5px solid #8e44ad; padding: 20px; margin: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Materi Lengkap CSS</h1>
+    
+    <div class="konsep">
+        <h2>Apa itu CSS?</h2>
+        <p><strong>CSS (Cascading Style Sheets)</strong> adalah bahasa stylesheet yang digunakan untuk mengatur tampilan dan format dokumen HTML. CSS memisahkan konten (HTML) dari presentasi (tampilan), sehingga memudahkan pengelolaan dan pemeliharaan website.</p>
+        <p>CSS digunakan untuk:</p>
+        <ul>
+            <li>Mengatur warna, font, dan spacing</li>
+            <li>Mengatur layout dan positioning</li>
+            <li>Membuat desain responsif untuk berbagai device</li>
+            <li>Menambahkan animasi dan transisi</li>
+        </ul>
+    </div>
+
+    <h2>Cara Kerja CSS</h2>
+    <div class="contoh">
+        <p>CSS bekerja dengan aturan (rules) yang terdiri dari:</p>
+        <ol>
+            <li><strong>Selector</strong>: Memilih elemen HTML yang akan di-style</li>
+            <li><strong>Declaration Block</strong>: Berisi satu atau lebih deklarasi</li>
+            <li><strong>Declaration</strong>: Terdiri dari property dan value</li>
+        </ol>
+        <pre><code>selector {
+    property: value;
+    property: value;
+}</code></pre>
+    </div>
+
+    <h2>Penempatan CSS</h2>
+    <div class="konsep">
+        <h3>1. Inline CSS</h3>
+        <p>Style langsung pada elemen HTML menggunakan atribut <code>style</code>:</p>
+        <pre><code>&lt;p style="color: blue; font-size: 16px;"&gt;Teks berwarna biru&lt;/p&gt;</code></pre>
+        
+        <h3>2. Internal CSS</h3>
+        <p>Style ditempatkan di dalam tag <code>&lt;style&gt;</code> di bagian <code>&lt;head&gt;</code>:</p>
+        <pre><code>&lt;head&gt;
+    &lt;style&gt;
+        p {
+            color: blue;
+            font-size: 16px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+        
+        <h3>3. External CSS</h3>
+        <p>Style ditempatkan di file terpisah (.css) dan di-link ke HTML:</p>
+        <pre><code>&lt;head&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;</code></pre>
+        <p><em>External CSS adalah metode yang paling direkomendasikan karena memisahkan konten dan presentasi.</em></p>
+    </div>
+
+    <h2>Selector CSS</h2>
+    <div class="contoh">
+        <table class="tabel">
+            <tr>
+                <th>Selector</th>
+                <th>Deskripsi</th>
+                <th>Contoh</th>
+            </tr>
+            <tr>
+                <td>Element Selector</td>
+                <td>Memilih berdasarkan nama elemen</td>
+                <td><code>p { color: blue; }</code></td>
+            </tr>
+            <tr>
+                <td>ID Selector</td>
+                <td>Memilih berdasarkan ID (unik)</td>
+                <td><code>#header { background: gray; }</code></td>
+            </tr>
+            <tr>
+                <td>Class Selector</td>
+                <td>Memilih berdasarkan class</td>
+                <td><code>.intro { font-weight: bold; }</code></td>
+            </tr>
+            <tr>
+                <td>Universal Selector</td>
+                <td>Memilih semua elemen</td>
+                <td><code>* { margin: 0; }</code></td>
+            </tr>
+            <tr>
+                <td>Grouping Selector</td>
+                <td>Memilih beberapa elemen</td>
+                <td><code>h1, h2, h3 { color: purple; }</code></td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Box Model</h2>
+    <div class="konsep">
+        <p>Setiap elemen HTML dianggap sebagai kotak dengan komponen:</p>
+        <ol>
+            <li><strong>Content</strong>: Konten aktual (teks, gambar)</li>
+            <li><strong>Padding</strong>: Ruang di dalam border</li>
+            <li><strong>Border</strong>: Garis tepi elemen</li>
+            <li><strong>Margin</strong>: Ruang di luar border</li>
+        </ol>
+        <div class="box-model">
+            Ini adalah contoh box model dengan padding, border, dan margin
+        </div>
+    </div>
+
+    <h2>Positioning</h2>
+    <div class="contoh">
+        <table class="tabel">
+            <tr>
+                <th>Position</th>
+                <th>Deskripsi</th>
+            </tr>
+            <tr>
+                <td><code>static</code></td>
+                <td>Default (tidak terpengaruh top/bottom/left/right)</td>
+            </tr>
+            <tr>
+                <td><code>relative</code></td>
+                <td>Relatif terhadap posisi normalnya</td>
+            </tr>
+            <tr>
+                <td><code>absolute</code></td>
+                <td>Relatif terhadap elemen parent terdekat yang positioned</td>
+            </tr>
+            <tr>
+                <td><code>fixed</code></td>
+                <td>Relatif terhadap viewport (tetap saat scroll)</td>
+            </tr>
+            <tr>
+                <td><code>sticky</code></td>
+                <td>Kombinasi relative dan fixed</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Flexbox Layout</h2>
+    <div class="konsep">
+        <p>Flexbox adalah metode layout satu dimensi untuk mengatur item dalam container:</p>
+        <h3>Properti Container:</h3>
+        <ul>
+            <li><code>display: flex</code>: Mengaktifkan flexbox</li>
+            <li><code>flex-direction</code>: Arah item (row/column)</li>
+            <li><code>justify-content</code>: Perataan horizontal</li>
+            <li><code>align-items</code>: Perataan vertikal</li>
+            <li><code>flex-wrap</code>: Wrapping item</li>
+        </ul>
+        
+        <h3>Properti Item:</h3>
+        <ul>
+            <li><code>flex-grow</code>: Faktor pertumbuhan</li>
+            <li><code>flex-shrink</code>: Faktor penyusutan</li>
+            <li><code>flex-basis</code>: Ukuran awal</li>
+            <li><code>align-self</code>: Override align-items</li>
+        </ul>
+    </div>
+
+    <h2>Grid Layout</h2>
+    <div class="contoh">
+        <p>CSS Grid adalah metode layout dua dimensi:</p>
+        <h3>Properti Container:</h3>
+        <ul>
+            <li><code>display: grid</code>: Mengaktifkan grid</li>
+            <li><code>grid-template-columns</code>: Definisi kolom</li>
+            <li><code>grid-template-rows</code>: Definisi baris</li>
+            <li><code>gap</code>: Jarak antar item</li>
+            <li><code>grid-template-areas</code>: Template area</li>
+        </ul>
+        
+        <h3>Properti Item:</h3>
+        <ul>
+            <li><code>grid-column</code>: Posisi kolom</li>
+            <li><code>grid-row</code>: Posisi baris</li>
+            <li><code>grid-area</code>: Nama area</li>
+        </ul>
+    </div>
+
+    <h2>Responsive Design</h2>
+    <div class="konsep">
+        <p>Responsive design membuat tampilan website menyesuaikan berbagai ukuran layar:</p>
+        <h3>Media Queries:</h3>
+        <pre><code>@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .container {
+        width: 100%;
+    }
+}</code></pre>
+        
+        <h3>Viewport Meta Tag:</h3>
+        <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+        
+        <h3>Unit Relatif:</h3>
+        <ul>
+            <li><code>%</code>: Persentase dari parent</li>
+            <li><code>vw</code>: 1% dari viewport width</li>
+            <li><code>vh</code>: 1% dari viewport height</li>
+            <li><code>rem</code>: Relatif terhadap font-size root</li>
+            <li><code>em</code>: Relatif terhadap font-size parent</li>
+        </ul>
+    </div>
+
+    <h2>Transisi dan Animasi</h2>
+    <div class="contoh">
+        <h3>Transisi:</h3>
+        <pre><code>.button {
+    background: blue;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background: darkblue;
+}</code></pre>
+        
+        <h3>Animasi:</h3>
+        <pre><code>@keyframes slide {
+    from { transform: translateX(0); }
+    to { transform: translateX(100px); }
+}
+
+.box {
+    animation: slide 2s infinite alternate;
+}</code></pre>
+    </div>
+
+    <h2>CSS Preprocessors</h2>
+    <div class="konsep">
+        <p>Preprocessors memperluas kemampuan CSS dengan fitur programming:</p>
+        <table class="tabel">
+            <tr>
+                <th>Preprocessor</th>
+                <th>Fitur Utama</th>
+            </tr>
+            <tr>
+                <td>Sass/SCSS</td>
+                <td>Variables, nesting, mixins, functions</td>
+            </tr>
+            <tr>
+                <td>Less</td>
+                <td>Variables, mixins, functions</td>
+            </tr>
+            <tr>
+                <td>Stylus</td>
+                <td>Dynamic syntax, variables, functions</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>CSS Framework</h2>
+    <div class="contoh">
+        <p>Framework CSS menyediakan komponen siap pakai:</p>
+        <table class="tabel">
+            <tr>
+                <th>Framework</th>
+                <th>Keunggulan</th>
+            </tr>
+            <tr>
+                <td>Bootstrap</td>
+                <td>Grid system, components, utilities</td>
+            </tr>
+            <tr>
+                <td>Tailwind CSS</td>
+                <td>Utility-first, highly customizable</td>
+            </tr>
+            <tr>
+                <td>Bulma</td>
+                <td>Lightweight, modular</td>
+            </tr>
+            <tr>
+                <td>Foundation</td>
+                <td>Advanced responsive, semantic</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Best Practices CSS</h2>
+    <div class="konsep">
+        <ol>
+            <li><strong>Gunakan External CSS</strong>: Pisahkan konten dan presentasi</li>
+            <li><strong>Organisir Kode</strong>: Gunakan komentar dan grouping</li>
+            <li><strong>Mobile-First</strong>: Desain untuk mobile dulu, lalu desktop</li>
+            <li><strong>Optimasi</strong>: Minify CSS, gunakan compression</li>
+            <li><strong>Consistency</strong>: Gunakan naming convention (BEM, OOCSS)</li>
+            <li><strong>Browser Support</strong>: Gunakan vendor prefixes dan fallbacks</li>
+            <li><strong>Performance</strong>: Hindari over-qualification, gunakan efficient selectors</li>
+        </ol>
+    </div>
+
+    <h2>Kesimpulan</h2>
+    <div class="konsep">
+        <p>CSS adalah alat penting untuk:</p>
+        <ul>
+            <li>Mengubah tampilan HTML menjadi menarik</li>
+            <li>Membuat layout yang kompleks dengan mudah</li>
+            <li>Membangun desain responsif untuk semua device</li>
+            <li>Menambahkan interaksi dengan animasi dan transisi</li>
+        </ul>
+        <p>Dengan menguasai CSS, Anda dapat mengubah struktur HTML menjadi website yang profesional dan user-friendly.</p>
+    </div>
+</body>
+</html>
