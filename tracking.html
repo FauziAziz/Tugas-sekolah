@@ -5,6 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tracking Pengiriman - SITTA UT</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #000;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .btn-add {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .btn-add:hover {
+            background-color: #218838;
+        }
+        .btn-action {
+            padding: 5px 10px;
+            margin: 0 2px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-edit {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .btn-delete {
+            background-color: #dc3545;
+            color: white;
+        }
+        .detail-barang {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        .detail-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .btn-add-detail {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
     <div class="dashboard-container">
@@ -18,7 +113,6 @@
                 <button id="logoutBtn" class="btn-secondary">Keluar</button>
             </div>
         </header>
-
         <nav class="dashboard-nav">
             <ul>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
@@ -34,9 +128,10 @@
                 <li><a href="#" class="nav-link">Histori Transaksi Bahan Ajar</a></li>
             </ul>
         </nav>
-
         <main class="tracking-main">
             <h2>Tracking Pengiriman</h2>
+            
+            <button id="btnAddData" class="btn-add">+ Tambah Data Pengiriman</button>
             
             <div class="tracking-form">
                 <div class="form-group">
@@ -49,11 +144,11 @@
             <div id="trackingResult" class="tracking-result">
                 <!-- Hasil pencarian akan ditampilkan di sini -->
             </div>
-
-            <!-- Tabel Data Dummy -->
+            
+            <!-- Tabel Data -->
             <div class="dummy-section">
-                <h3>Data Dummy untuk Testing</h3>
-                <p class="subtitle">Gunakan nomor DO berikut untuk mencoba fitur tracking:</p>
+                <h3>Data Pengiriman</h3>
+                <p class="subtitle">Daftar semua data pengiriman bahan ajar</p>
                 
                 <table class="stock-table dummy-table">
                     <thead>
@@ -67,14 +162,386 @@
                         </tr>
                     </thead>
                     <tbody id="dummyTableBody">
-                        <!-- Data akan diisi oleh JavaScript -->
+                        <tr>
+                            <td colspan="6" style="text-align: center;">Memuat data...</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </main>
     </div>
 
+    <!-- Modal Form -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Tambah Data Pengiriman</h2>
+            <form id="trackingForm">
+                <div class="form-group">
+                    <label for="formNomorDo">Nomor DO *</label>
+                    <input type="text" id="formNomorDo" name="nomor_do" required>
+                </div>
+                <div class="form-group">
+                    <label for="formNamaMahasiswa">Nama Mahasiswa *</label>
+                    <input type="text" id="formNamaMahasiswa" name="nama_mahasiswa" required>
+                </div>
+                <div class="form-group">
+                    <label for="formNim">NIM</label>
+                    <input type="text" id="formNim" name="nim">
+                </div>
+                <div class="form-group">
+                    <label for="formAlamat">Alamat</label>
+                    <textarea id="formAlamat" name="alamat" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="formKota">Kota</label>
+                    <input type="text" id="formKota" name="kota">
+                </div>
+                <div class="form-group">
+                    <label for="formKodePos">Kode Pos</label>
+                    <input type="text" id="formKodePos" name="kode_pos">
+                </div>
+                <div class="form-group">
+                    <label for="formNoTelepon">No. Telepon</label>
+                    <input type="text" id="formNoTelepon" name="no_telepon">
+                </div>
+                <div class="form-group">
+                    <label for="formEkspedisi">Ekspedisi</label>
+                    <select id="formEkspedisi" name="ekspedisi">
+                        <option value="">Pilih Ekspedisi</option>
+                        <option value="JNE">JNE</option>
+                        <option value="JNT">JNT</option>
+                        <option value="SiCepat">SiCepat</option>
+                        <option value="Anteraja">Anteraja</option>
+                        <option value="POS Indonesia">POS Indonesia</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="formNoResi">No. Resi</label>
+                    <input type="text" id="formNoResi" name="no_resi">
+                </div>
+                <div class="form-group">
+                    <label for="formStatus">Status *</label>
+                    <select id="formStatus" name="status" required>
+                        <option value="Proses">Proses</option>
+                        <option value="Dikirim">Dikirim</option>
+                        <option value="Dalam Perjalanan">Dalam Perjalanan</option>
+                        <option value="Terkirim">Terkirim</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="formProgress">Progress (0-100)</label>
+                    <input type="number" id="formProgress" name="progress" min="0" max="100" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="formKeterangan">Keterangan</label>
+                    <textarea id="formKeterangan" name="keterangan" rows="2"></textarea>
+                </div>
+                
+                <div class="detail-barang">
+                    <label><strong>Detail Barang</strong></label>
+                    <div id="detailBarangContainer"></div>
+                    <button type="button" id="btnAddDetailBarang" class="btn-add-detail">+ Tambah Barang</button>
+                </div>
+                
+                <div style="margin-top: 20px; text-align: right;">
+                    <button type="button" id="btnCancel" class="btn-secondary">Batal</button>
+                    <button type="submit" class="btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="js/data.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        // Konfigurasi API
+        const API_URL = 'api_tracking.php';
+        let isEditMode = false;
+        let editNomorDo = null;
+
+        // Load data saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAllData();
+            setupEventListeners();
+        });
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Tombol tambah data
+            document.getElementById('btnAddData').addEventListener('click', function() {
+                openModal(false);
+            });
+
+            // Tombol cari
+            document.getElementById('searchBtn').addEventListener('click', searchTracking);
+            
+            // Enter key di input search
+            document.getElementById('doNumber').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') searchTracking();
+            });
+
+            // Modal close
+            document.querySelector('.close').addEventListener('click', closeModal);
+            document.getElementById('btnCancel').addEventListener('click', closeModal);
+
+            // Form submit
+            document.getElementById('trackingForm').addEventListener('submit', handleFormSubmit);
+
+            // Tambah detail barang
+            document.getElementById('btnAddDetailBarang').addEventListener('click', addDetailBarangField);
+
+            // Close modal jika klik di luar
+            window.addEventListener('click', function(e) {
+                const modal = document.getElementById('formModal');
+                if (e.target === modal) closeModal();
+            });
+        }
+
+        // Load semua data
+        async function loadAllData() {
+            try {
+                const response = await fetch(API_URL);
+                const result = await response.json();
+                
+                if (result.success) {
+                    displayTableData(result.data);
+                } else {
+                    console.error('Gagal load data:', result.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('dummyTableBody').innerHTML = 
+                    '<tr><td colspan="6" style="text-align: center; color: red;">Error memuat data. Pastikan server PHP berjalan.</td></tr>';
+            }
+        }
+
+        // Tampilkan data di tabel
+        function displayTableData(data) {
+            const tbody = document.getElementById('dummyTableBody');
+            
+            if (data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align: center;">Tidak ada data</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = data.map(item => `
+                <tr>
+                    <td>${item.nomor_do}</td>
+                    <td>${item.nama_mahasiswa}</td>
+                    <td><span class="status-badge status-${item.status.toLowerCase().replace(' ', '-')}">${item.status}</span></td>
+                    <td>${item.progress}%</td>
+                    <td>${item.ekspedisi || '-'}</td>
+                    <td>
+                        <button class="btn-action btn-edit" onclick="editData('${item.nomor_do}')">Edit</button>
+                        <button class="btn-action btn-delete" onclick="deleteData('${item.nomor_do}')">Hapus</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Cari tracking
+        async function searchTracking() {
+            const doNumber = document.getElementById('doNumber').value.trim();
+            
+            if (!doNumber) {
+                alert('Masukkan nomor DO');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}?action=search&nomor_do=${doNumber}`);
+                const result = await response.json();
+                
+                if (result.success && result.data) {
+                    displayTrackingResult(result.data);
+                } else {
+                    document.getElementById('trackingResult').innerHTML = 
+                        '<div style="padding: 20px; text-align: center; color: red;">Data tidak ditemukan</div>';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan saat mencari data');
+            }
+        }
+
+        // Tampilkan hasil tracking
+        function displayTrackingResult(data) {
+            const detailBarang = data.detail_barang && data.detail_barang.length > 0 
+                ? data.detail_barang.map(item => `
+                    <tr>
+                        <td>${item.kode_matakuliah}</td>
+                        <td>${item.nama_matakuliah}</td>
+                        <td>${item.jumlah}</td>
+                    </tr>
+                `).join('')
+                : '<tr><td colspan="3">Tidak ada detail barang</td></tr>';
+
+            document.getElementById('trackingResult').innerHTML = `
+                <div style="background: white; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                    <h3>Detail Pengiriman</h3>
+                    <table style="width: 100%; margin-top: 10px;">
+                        <tr><td><strong>Nomor DO:</strong></td><td>${data.nomor_do}</td></tr>
+                        <tr><td><strong>Nama:</strong></td><td>${data.nama_mahasiswa}</td></tr>
+                        <tr><td><strong>NIM:</strong></td><td>${data.nim || '-'}</td></tr>
+                        <tr><td><strong>Alamat:</strong></td><td>${data.alamat || '-'}</td></tr>
+                        <tr><td><strong>Kota:</strong></td><td>${data.kota || '-'}</td></tr>
+                        <tr><td><strong>Ekspedisi:</strong></td><td>${data.ekspedisi || '-'}</td></tr>
+                        <tr><td><strong>No. Resi:</strong></td><td>${data.no_resi || '-'}</td></tr>
+                        <tr><td><strong>Status:</strong></td><td><span class="status-badge">${data.status}</span></td></tr>
+                        <tr><td><strong>Progress:</strong></td><td>${data.progress}%</td></tr>
+                    </table>
+                    <h4 style="margin-top: 20px;">Detail Barang</h4>
+                    <table class="stock-table" style="margin-top: 10px;">
+                        <thead>
+                            <tr>
+                                <th>Kode Matakuliah</th>
+                                <th>Nama Matakuliah</th>
+                                <th>Jumlah</th>
+                            </tr>
+                        </thead>
+                        <tbody>${detailBarang}</tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        // Open modal
+        function openModal(editMode = false) {
+            isEditMode = editMode;
+            document.getElementById('modalTitle').textContent = editMode ? 'Edit Data Pengiriman' : 'Tambah Data Pengiriman';
+            document.getElementById('formNomorDo').readOnly = editMode;
+            document.getElementById('formModal').style.display = 'block';
+            
+            if (!editMode) {
+                document.getElementById('trackingForm').reset();
+                document.getElementById('detailBarangContainer').innerHTML = '';
+            }
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('formModal').style.display = 'none';
+            isEditMode = false;
+            editNomorDo = null;
+        }
+
+        // Tambah field detail barang
+        function addDetailBarangField(kode = '', nama = '', jumlah = '') {
+            const container = document.getElementById('detailBarangContainer');
+            const index = container.children.length;
+            
+            const div = document.createElement('div');
+            div.className = 'detail-item';
+            div.innerHTML = `
+                <input type="text" placeholder="Kode MK" value="${kode}" data-detail="kode" style="flex: 1;">
+                <input type="text" placeholder="Nama MK" value="${nama}" data-detail="nama" style="flex: 2;">
+                <input type="number" placeholder="Jumlah" value="${jumlah}" data-detail="jumlah" style="flex: 0.5;" min="1">
+                <button type="button" onclick="this.parentElement.remove()" style="background: red; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px;">X</button>
+            `;
+            container.appendChild(div);
+        }
+
+        // Handle form submit
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Ambil detail barang
+            const detailItems = document.querySelectorAll('#detailBarangContainer .detail-item');
+            data.detail_barang = Array.from(detailItems).map(item => ({
+                kode_matakuliah: item.querySelector('[data-detail="kode"]').value,
+                nama_matakuliah: item.querySelector('[data-detail="nama"]').value,
+                jumlah: parseInt(item.querySelector('[data-detail="jumlah"]').value) || 0
+            })).filter(item => item.kode_matakuliah && item.nama_matakuliah);
+
+            try {
+                const method = isEditMode ? 'PUT' : 'POST';
+                const response = await fetch(API_URL, {
+                    method: method,
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert(result.message);
+                    closeModal();
+                    loadAllData();
+                } else {
+                    alert('Error: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan saat menyimpan data');
+            }
+        }
+
+        // Edit data
+        async function editData(nomorDo) {
+            try {
+                const response = await fetch(`${API_URL}?action=search&nomor_do=${nomorDo}`);
+                const result = await response.json();
+                
+                if (result.success && result.data) {
+                    const data = result.data;
+                    editNomorDo = nomorDo;
+                    
+                    // Isi form
+                    document.getElementById('formNomorDo').value = data.nomor_do;
+                    document.getElementById('formNamaMahasiswa').value = data.nama_mahasiswa;
+                    document.getElementById('formNim').value = data.nim || '';
+                    document.getElementById('formAlamat').value = data.alamat || '';
+                    document.getElementById('formKota').value = data.kota || '';
+                    document.getElementById('formKodePos').value = data.kode_pos || '';
+                    document.getElementById('formNoTelepon').value = data.no_telepon || '';
+                    document.getElementById('formEkspedisi').value = data.ekspedisi || '';
+                    document.getElementById('formNoResi').value = data.no_resi || '';
+                    document.getElementById('formStatus').value = data.status;
+                    document.getElementById('formProgress').value = data.progress;
+                    document.getElementById('formKeterangan').value = data.keterangan || '';
+                    
+                    // Isi detail barang
+                    document.getElementById('detailBarangContainer').innerHTML = '';
+                    if (data.detail_barang && data.detail_barang.length > 0) {
+                        data.detail_barang.forEach(item => {
+                            addDetailBarangField(item.kode_matakuliah, item.nama_matakuliah, item.jumlah);
+                        });
+                    }
+                    
+                    openModal(true);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan saat mengambil data');
+            }
+        }
+
+        // Delete data
+        async function deleteData(nomorDo) {
+            if (!confirm(`Yakin ingin menghapus data ${nomorDo}?`)) return;
+            
+            try {
+                const response = await fetch(`${API_URL}?nomor_do=${nomorDo}`, {
+                    method: 'DELETE'
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert(result.message);
+                    loadAllData();
+                } else {
+                    alert('Error: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan saat menghapus data');
+            }
+        }
+    </script>
 </body>
 </html>
