@@ -153,6 +153,17 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.header-center {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+}
+
+.header-center h1 {
+    margin-left: 1rem;       
+    color: #0056b3;
+}
+
 .header-left {
     display: flex;
     align-items: center;
