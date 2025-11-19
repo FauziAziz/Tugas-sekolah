@@ -3,550 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materi PHP Terpilih</title>
+    <title>Materi PHP Dasar</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.8; max-width: 900px; margin: 0 auto; padding: 20px; }
-        h1 { color: #2c3e50; text-align: center; border-bottom: 3px solid #e74c3c; padding-bottom: 10px; }
-        h2 { color: #c0392b; margin-top: 30px; }
-        h3 { color: #e74c3c; margin-top: 20px; }
-        .konsep { background: #fadbd8; padding: 15px; border-left: 4px solid #e74c3c; margin: 15px 0; }
-        .contoh { background: #fef5e7; border: 1px solid #f8c471; padding: 15px; margin: 15px 0; border-radius: 5px; }
-        code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-family: 'Courier New', monospace; }
-        pre { background: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        .tabel { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        .tabel th, .tabel td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        .tabel th { background-color: #e74c3c; color: white; }
+        body {
+    margin: 0;
+    padding: 20px;
+}
+.konten {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
     </style>
 </head>
 <body>
-    <h1>Materi PHP Terpilih</h1>
-    
-    <div class="konsep">
-        <h2>Apa itu PHP?</h2>
-        <p><strong>PHP (PHP: Hypertext Preprocessor)</strong> adalah bahasa pemrograman server-side yang digunakan untuk pengembangan web. PHP dapat disisipkan ke dalam HTML dan dijalankan di server, menghasilkan HTML yang dikirim ke browser.</p>
+<!-- Copy paste HTML ini -->
+<header style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 30px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+        <div style="flex: 1; min-width: 200px;">
+            <a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 5px; margin-bottom: 10px;">
+                ← Kembali
+            </a>
+            <h1 style="color: white; font-size: 28px; margin: 0; font-weight: 700; line-height: 1.3;">Materi PHP </h1>
+            <p style="color: rgba(255,255,255,0.9); margin: 8px 0 0 0; font-size: 14px;">
+                <span>Oleh: Nama Penulis</span> • <span>19 November 2025</span> • <span>5 menit baca</span>
+            </p>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <button style="padding: 10px 20px; border: 2px solid white; border-radius: 8px; background: transparent; color: white; font-weight: 600; cursor: pointer;">Bagikan</button>
+            <button style="padding: 10px 20px; border: none; border-radius: 8px; background: white; color: #667eea; font-weight: 600; cursor: pointer;">Simpan</button>
+        </div>
     </div>
-
-    <h2>Tag PHP</h2>
-    <div class="contoh">
-        <p>PHP diawali dengan <code>&lt;?php</code> dan diakhiri dengan <code>?&gt;</code>:</p>
-        <pre><code>&lt;?php
-    // Kode PHP di sini
-    echo "Hello, World!";
-?&gt;</code></pre>
-        
-        <p>PHP dapat disisipkan di mana saja dalam HTML:</p>
-        <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-    &lt;h1&gt;&lt;?php echo "Judul Dinamis"; ?&gt;&lt;/h1&gt;
-    &lt;p&gt;Tanggal hari ini: &lt;?php echo date('Y-m-d'); ?&gt;&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+</header>
+    <div class="konten">
+    <h2>1. Pengenalan PHP</h2>
+    <p>PHP (Hypertext Preprocessor) adalah bahasa pemrograman server-side yang digunakan untuk membuat website dinamis.</p>
+    <p>File PHP menggunakan ekstensi .php dan dapat berisi HTML, CSS, JavaScript, dan kode PHP.</p>
+    
+    <h2>2. Syntax Dasar</h2>
+    <p>Kode PHP ditulis di antara tag pembuka dan penutup:</p>
+    <pre>&lt;?php
+    echo "Hello World!";
+?&gt;</pre>
+    
+    <h2>3. Variabel</h2>
+    <p>Variabel di PHP diawali dengan tanda $:</p>
+    <pre>&lt;?php
+    $nama = "Budi";
+    $umur = 25;
+    $tinggi = 170.5;
+    $aktif = true;
+?&gt;</pre>
+    
+    <h2>4. Tipe Data</h2>
+    <ul>
+        <li>String - teks dalam tanda petik</li>
+        <li>Integer - bilangan bulat</li>
+        <li>Float - bilangan desimal</li>
+        <li>Boolean - true/false</li>
+        <li>Array - kumpulan data</li>
+        <li>Object - instance dari class</li>
+    </ul>
+    
+    <h2>5. Operator</h2>
+    <h3>Operator Aritmatika:</h3>
+    <ul>
+        <li>+ (penjumlahan)</li>
+        <li>- (pengurangan)</li>
+        <li>* (perkalian)</li>
+        <li>/ (pembagian)</li>
+        <li>% (modulus/sisa bagi)</li>
+    </ul>
+    
+    <h3>Operator Perbandingan:</h3>
+    <ul>
+        <li>== (sama dengan)</li>
+        <li>!= (tidak sama dengan)</li>
+        <li>&
     </div>
-
-    <h2>Tipe Data</h2>
-    <div class="konsep">
-        <table class="tabel">
-            <tr>
-                <th>Tipe</th>
-                <th>Contoh</th>
-                <th>Deskripsi</th>
-            </tr>
-            <tr>
-                <td>String</td>
-                <td><code>"Hello"</code></td>
-                <td>Teks</td>
-            </tr>
-            <tr>
-                <td>Integer</td>
-                <td><code>42</code></td>
-                <td>Bilangan bulat</td>
-            </tr>
-            <tr>
-                <td>Float</td>
-                <td><code>3.14</code></td>
-                <td>Bilangan desimal</td>
-            </tr>
-            <tr>
-                <td>Boolean</td>
-                <td><code>true</code></td>
-                <td>Nilai benar/salah</td>
-            </tr>
-            <tr>
-                <td>Array</td>
-                <td><code>[1, 2, 3]</code></td>
-                <td>Koleksi nilai</td>
-            </tr>
-            <tr>
-                <td>NULL</td>
-                <td><code>null</code></td>
-                <td>Tanpa nilai</td>
-            </tr>
-        </table>
-    </div>
-
-    <h2>Aritmatika</h2>
-    <div class="contoh">
-        <p>Operator aritmatika dalam PHP:</p>
-        <table class="tabel">
-            <tr>
-                <th>Operator</th>
-                <th>Deskripsi</th>
-                <th>Contoh</th>
-            </tr>
-            <tr>
-                <td><code>+</code></td>
-                <td>Penjumlahan</td>
-                <td><code>$a + $b</code></td>
-            </tr>
-            <tr>
-                <td><code>-</code></td>
-                <td>Pengurangan</td>
-                <td><code>$a - $b</code></td>
-            </tr>
-            <tr>
-                <td><code>*</code></td>
-                <td>Perkalian</td>
-                <td><code>$a * $b</code></td>
-            </tr>
-            <tr>
-                <td><code>/</code></td>
-                <td>Pembagian</td>
-                <td><code>$a / $b</code></td>
-            </tr>
-            <tr>
-                <td><code>%</code></td>
-                <td>Modulus (sisa bagi)</td>
-                <td><code>$a % $b</code></td>
-            </tr>
-            <tr>
-                <td><code>**</code></td>
-                <td>Pangkat</td>
-                <td><code>$a ** $b</code></td>
-            </tr>
-        </table>
-        
-        <pre><code>&lt;?php
-    $a = 10;
-    $b = 3;
-    
-    echo $a + $b; // 13
-    echo $a - $b; // 7
-    echo $a * $b; // 30
-    echo $a / $b; // 3.333...
-    echo $a % $b; // 1
-    echo $a ** $b; // 1000
-?&gt;</code></pre>
-    </div>
-
-    <h2>Percabangan</h2>
-    <div class="konsep">
-        <h3>IF - ELSEIF - ELSE</h3>
-        <pre><code>&lt;?php
-    $nilai = 85;
-    
-    if ($nilai >= 90) {
-        echo "A";
-    } elseif ($nilai >= 80) {
-        echo "B";
-    } elseif ($nilai >= 70) {
-        echo "C";
-    } else {
-        echo "D";
-    }
-?&gt;</code></pre>
-        
-        <h3>SWITCH</h3>
-        <pre><code>&lt;?php
-    $grade = "B";
-    
-    switch ($grade) {
-        case "A":
-            echo "Sempurna";
-            break;
-        case "B":
-            echo "Baik";
-            break;
-        case "C":
-            echo "Cukup";
-            break;
-        default:
-            echo "Kurang";
-    }
-?&gt;</code></pre>
-    </div>
-
-    <h2>Perulangan</h2>
-    <div class="contoh">
-        <h3>FOR Loop</h3>
-        <pre><code>&lt;?php
-    for ($i = 1; $i <= 5; $i++) {
-        echo "Nomor: $i &lt;br&gt;";
-    }
-?&gt;</code></pre>
-        
-        <h3>WHILE Loop</h3>
-        <pre><code>&lt;?php
-    $i = 1;
-    while ($i <= 5) {
-        echo "Iterasi: $i &lt;br&gt;";
-        $i++;
-    }
-?&gt;</code></pre>
-        
-        <h3>DO-WHILE Loop</h3>
-        <pre><code>&lt;?php
-    $i = 1;
-    do {
-        echo "Nomor: $i &lt;br&gt;";
-        $i++;
-    } while ($i <= 5);
-?&gt;</code></pre>
-        
-        <h3>FOREACH Loop</h3>
-        <pre><code>&lt;?php
-    $colors = ["Merah", "Hijau", "Biru"];
-    
-    foreach ($colors as $color) {
-        echo "Warna: $color &lt;br&gt;";
-    }
-    
-    // Dengan key
-    $person = ["nama" => "John", "umur" => 30];
-    foreach ($person as $key => $value) {
-        echo "$key: $value &lt;br&gt;";
-    }
-?&gt;</code></pre>
-    </div>
-
-    <h2>Function</h2>
-    <div class="konsep">
-        <h3>Fungsi Dasar</h3>
-        <pre><code>&lt;?php
-    function sapa($nama) {
-        return "Halo, $nama!";
-    }
-    
-    echo sapa("John"); // Halo, John!
-?&gt;</code></pre>
-        
-        <h3>Fungsi dengan Default Parameter</h3>
-        <pre><code>&lt;?php
-    function hitungHarga($harga, $diskon = 0) {
-        return $harga - ($harga * $diskon / 100);
-    }
-    
-    echo hitungHarga(100000); // 100000
-    echo hitungHarga(100000, 10); // 90000
-?&gt;</code></pre>
-        
-        <h3>Fungsi Bawaan PHP</h3>
-        <pre><code>&lt;?php
-    // String functions
-    echo strlen("Hello"); // 5
-    echo str_replace("World", "PHP", "Hello World"); // Hello PHP
-    
-    // Array functions
-    $numbers = [3, 1, 4, 2];
-    sort($numbers);
-    print_r($numbers); // [1, 2, 3, 4]
-    
-    // Math functions
-    echo round(3.7); // 4
-    echo rand(1, 10); // Angka random 1-10
-?&gt;</code></pre>
-    </div>
-
-    <h2>Method GET</h2>
-    <div class="contoh">
-        <p>Method GET mengirim data melalui URL:</p>
-        
-        <h3>Form HTML dengan GET</h3>
-        <pre><code>&lt;form action="proses.php" method="get"&gt;
-    Nama: &lt;input type="text" name="nama"&gt;
-    Umur: &lt;input type="number" name="umur"&gt;
-    &lt;button type="submit"&gt;Kirim&lt;/button&gt;
-&lt;/form&gt;</code></pre>
-        
-        <h3>Memproses Data GET di PHP</h3>
-        <pre><code>&lt;?php
-    // proses.php
-    if (isset($_GET['nama']) && isset($_GET['umur'])) {
-        $nama = htmlspecialchars($_GET['nama']);
-        $umur = htmlspecialchars($_GET['umur']);
-        
-        echo "Nama: $nama &lt;br&gt;";
-        echo "Umur: $umur tahun";
-    }
-?&gt;</code></pre>
-        
-        <h3>Contoh URL Hasil</h3>
-        <p><code>http://example.com/proses.php?nama=John&umur=25</code></p>
-        
-        <h3>Karakteristik GET</h3>
-        <ul>
-            <li>Data terlihat di URL</li>
-            <li>Tidak cocok untuk data sensitif</li>
-            <li>Batasan panjang URL (tergantung browser)</li>
-            <li>Dapat di-bookmark</li>
-        </ul>
-    </div>
-
-    <h2>OOP (Object-Oriented Programming)</h2>
-    <div class="konsep">
-        <h3>Class dan Object</h3>
-        <pre><code>&lt;?php
-    class Mobil {
-        // Properties
-        public $merk;
-        public $warna;
-        private $tahun;
-        
-        // Constructor
-        public function __construct($merk, $warna, $tahun) {
-            $this->merk = $merk;
-            $this->warna = $warna;
-            $this->tahun = $tahun;
-        }
-        
-        // Method
-        public function getInfo() {
-            return "Mobil: {$this->merk}, Warna: {$this->warna}, Tahun: {$this->tahun}";
-        }
-        
-        // Getter
-        public function getTahun() {
-            return $this->tahun;
-        }
-    }
-    
-    // Membuat object
-    $mobil1 = new Mobil("Toyota", "Hitam", 2020);
-    echo $mobil1->getInfo(); // Mobil: Toyota, Warna: Hitam, Tahun: 2020
-    echo $mobil1->getTahun(); // 2020
-?&gt;</code></pre>
-        
-        <h3>Inheritance (Pewarisan)</h3>
-        <pre><code>&lt;?php
-    class Kendaraan {
-        protected $jenis;
-        
-        public function __construct($jenis) {
-            $this->jenis = $jenis;
-        }
-    }
-    
-    class Motor extends Kendaraan {
-        private $cc;
-        
-        public function __construct($jenis, $cc) {
-            parent::__construct($jenis);
-            $this->cc = $cc;
-        }
-        
-        public function getInfo() {
-            return "Motor {$this->jenis}, {$this->cc}cc";
-        }
-    }
-    
-    $motor = new Motor("Sport", 250);
-    echo $motor->getInfo(); // Motor Sport, 250cc
-?&gt;</code></pre>
-        
-        <h3>Encapsulation</h3>
-        <ul>
-            <li><strong>Public</strong>: Dapat diakses dari mana saja</li>
-            <li><strong>Protected</strong>: Hanya dalam class dan child class</li>
-            <li><strong>Private</strong>: Hanya dalam class itu sendiri</li>
-        </ul>
-        
-        <h3>Polimorfisme</h3>
-        <pre><code>&lt;?php
-    interface Bentuk {
-        public function hitungLuas();
-    }
-    
-    class Persegi implements Bentuk {
-        private $sisi;
-        
-        public function __construct($sisi) {
-            $this->sisi = $sisi;
-        }
-        
-        public function hitungLuas() {
-            return $this->sisi * $this->sisi;
-        }
-    }
-    
-    class Lingkaran implements Bentuk {
-        private $jari;
-        
-        public function __construct($jari) {
-            $this->jari = $jari;
-        }
-        
-        public function hitungLuas() {
-            return pi() * $this->jari * $this->jari;
-        }
-    }
-    
-    $persegi = new Persegi(5);
-    $lingkaran = new Lingkaran(7);
-    
-    echo "Luas Persegi: " . $persegi->hitungLuas();
-    echo "Luas Lingkaran: " . round($lingkaran->hitungLuas(), 2);
-?&gt;</code></pre>
-    </div>
-
-    <h2>MVC (Model-View-Controller)</h2>
-    <div class="contoh">
-        <h3>Konsep MVC</h3>
-        <p>MVC adalah arsitektur pemrograman yang memisahkan aplikasi menjadi tiga komponen utama:</p>
-        <ol>
-            <li><strong>Model</strong>: Mengelola data dan logika bisnis</li>
-            <li><strong>View</strong>: Menampilkan data ke pengguna (UI)</li>
-            <li><strong>Controller</strong>: Menghubungkan Model dan View</li>
-        </ol>
-        
-        <h3>Struktur Folder MVC</h3>
-        <pre><code>project/
-├── app/
-│   ├── controllers/
-│   │   └── UserController.php
-│   ├── models/
-│   │   └── User.php
-│   └── views/
-│       └── user/
-│           ├── index.php
-│           └── show.php
-├── public/
-│   └── index.php
-└── config/
-    └── database.php</code></pre>
-        
-        <h3>Contoh Implementasi</h3>
-        
-        <h4>1. Model (User.php)</h4>
-        <pre><code>&lt;?php
-class User {
-    private $db;
-    
-    public function __construct($db) {
-        $this->db = $db;
-    }
-    
-    public function getAllUsers() {
-        $query = "SELECT * FROM users";
-        return $this->db->query($query)->fetchAll();
-    }
-    
-    public function getUserById($id) {
-        $query = "SELECT * FROM users WHERE id = ?";
-        $stmt = $this->db->prepare($query);
-        $stmt->execute([$id]);
-        return $stmt->fetch();
-    }
-}
-?&gt;</code></pre>
-        
-        <h4>2. View (index.php)</h4>
-        <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Daftar User&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;Daftar User&lt;/h1&gt;
-    &lt;table border="1"&gt;
-        &lt;tr&gt;
-            &lt;th&gt;ID&lt;/th&gt;
-            &lt;th&gt;Nama&lt;/th&gt;
-            &lt;th&gt;Email&lt;/th&gt;
-        &lt;/tr&gt;
-        &lt;?php foreach ($users as $user): ?&gt;
-        &lt;tr&gt;
-            &lt;td&gt;&lt;?php echo $user['id']; ?&gt;&lt;/td&gt;
-            &lt;td&gt;&lt;?php echo $user['name']; ?&gt;&lt;/td&gt;
-            &lt;td&gt;&lt;?php echo $user['email']; ?&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;?php endforeach; ?&gt;
-    &lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-        
-        <h4>3. Controller (UserController.php)</h4>
-        <pre><code>&lt;?php
-class UserController {
-    private $userModel;
-    
-    public function __construct($db) {
-        $this->userModel = new User($db);
-    }
-    
-    public function index() {
-        $users = $this->userModel->getAllUsers();
-        require 'views/user/index.php';
-    }
-    
-    public function show($id) {
-        $user = $this->userModel->getUserById($id);
-        require 'views/user/show.php';
-    }
-}
-?&gt;</code></pre>
-        
-        <h4>4. Entry Point (index.php)</h4>
-        <pre><code>&lt;?php
-// Load konfigurasi
-require_once '../config/database.php';
-
-// Routing sederhana
- $controller = isset($_GET['c']) ? $_GET['c'] : 'user';
- $action = isset($_GET['a']) ? $_GET['a'] : 'index';
- $id = isset($_GET['id']) ? $_GET['id'] : null;
-
-// Instansiasi controller
-switch ($controller) {
-    case 'user':
-        $userController = new UserController($db);
-        
-        switch ($action) {
-            case 'index':
-                $userController->index();
-                break;
-            case 'show':
-                $userController->show($id);
-                break;
-        }
-        break;
-}
-?&gt;</code></pre>
-        
-        <h3>Keuntungan MVC</h3>
-        <ul>
-            <li>Pemisahan tugas yang jelas</li>
-            <li>Kode lebih terorganisir</li>
-            <li>Mudah dalam pengembangan tim</li>
-            <li>Reusability kode</li>
-            <li>Mudah dalam maintenance</li>
-        </ul>
-    </div>
-
-    <h2>Kesimpulan</h2>
-    <div class="konsep">
-        <p>Materi PHP yang telah dibahas mencakup:</p>
-        <ul>
-            <li><strong>Tag PHP</strong>: Cara menulis kode PHP dalam HTML</li>
-            <li><strong>Tipe Data</strong>: Jenis-jenis data yang dapat digunakan</li>
-            <li><strong>Aritmatika</strong>: Operasi matematika dasar</li>
-            <li><strong>Percabangan</strong>: Pengambilan keputusan dengan IF/SWITCH</li>
-            <li><strong>Perulangan</strong>: Iterasi dengan FOR, WHILE, FOREACH</li>
-            <li><strong>Function</strong>: Membuat dan menggunakan fungsi</li>
-            <li><strong>Method GET</strong>: Mengirim data melalui URL</li>
-            <li><strong>OOP</strong>: Pemrograman berorientasi objek</li>
-            <li><strong>MVC</strong>: Arsitektur aplikasi terstruktur</li>
-        </ul>
-        <p>Dengan memahami konsep-konsep ini, Anda dapat membangun aplikasi web yang terstruktur dan efisien menggunakan PHP.</p>
-    </div>
-</body>
-</html>

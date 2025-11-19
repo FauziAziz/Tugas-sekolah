@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi JavaScript Dasar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+        }
+        .konten {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+    </style>
+</head>
+<body>
+<header style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 30px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+        <div style="flex: 1; min-width: 200px;">
+            <a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 5px; margin-bottom: 10px;">
+                ← Kembali
+            </a>
+            <h1 style="color: white; font-size: 28px; margin: 0; font-weight: 700; line-height: 1.3;">Materi JS</h1>
+            <p style="color: rgba(255,255,255,0.9); margin: 8px 0 0 0; font-size: 14px;">
+                <span>Oleh: Nama Penulis</span> • <span>19 November 2025</span> • <span>5 menit baca</span>
+            </p>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <button style="padding: 10px 20px; border: 2px solid white; border-radius: 8px; background: transparent; color: white; font-weight: 600; cursor: pointer;">Bagikan</button>
+            <button style="padding: 10px 20px; border: none; border-radius: 8px; background: white; color: #667eea; font-weight: 600; cursor: pointer;">Simpan</button>
+        </div>
+    </div>
+</header>
+    <div class="konten">
+        <h2>1. Pengenalan JavaScript</h2>
+        <p>JavaScript adalah bahasa pemrograman yang digunakan untuk membuat website interaktif dan dinamis.</p>
+        <p>JavaScript berjalan di browser (client-side) dan bisa juga di server (Node.js).</p>
+        
+        <h2>2. Cara Menulis JavaScript</h2>
+        <h3>Internal JavaScript:</h3>
+        <pre>&lt;script&gt;
+    console.log("Hello World!");
+&lt;/script&gt;</pre>
+        
+        <h3>External JavaScript:</h3>
+        <pre>&lt;script src="script.js"&gt;&lt;/script&gt;</pre>
+        
+        <h3>Inline JavaScript:</h3>
+        <pre>&lt;button onclick="alert('Hello!')"&gt;Klik Saya&lt;/button&gt;</pre>
+        
+        <h2>3. Output JavaScript</h2>
+        <pre>// Ke console browser
+console.log("Pesan di console");
+
+// Alert popup
+alert("Pesan alert");
+
+// Konfirmasi
+confirm("Yakin?");
+
+// Input popup
+prompt("Masukkan nama:");
+
+// Menulis ke HTML
+document.write("Teks ke halaman");
+
+// Mengubah konten element
+document.getElementById("demo").innerHTML = "Teks baru";</pre>
+        
+        <h2>4. Variabel</h2>
+        <pre>// var (cara lama, scope function)
+var nama = "Budi";
+
+// let (modern, scope block, bisa diubah)
+let umur = 25;
+umur = 26; // bisa diubah
+
+// const (modern, scope block, tidak bisa diubah)
+const PI = 3.14;
+// PI = 3.15; // Error!</pre>
+        
+        <h2>5. Tipe Data</h2>
+        <pre>// String
+let nama = "Budi";
+let kota = 'Jakarta';
+
+// Number
+let umur = 25;
+let tinggi = 170.5;
+
+// Boolean
+let aktif = true;
+let sudahMenikah = false;
+
+// Undefined
+let x;
+console.log(x); // undefined
+
+// Null
+let data = null;
+
+// Object
+let orang = {
+    nama: "Budi",
+    umur: 25
+};
+
+// Array
+let buah = ["Apel", "Jeruk", "Mangga"];
+
+// Cek tipe data
+console.log(typeof nama); // "string"</pre>
+        
+        <h2>6. Operator</h2>
+        <h3>Operator Aritmatika:</h3>
+        <pre>let a = 10, b = 3;
+
+console.log(a + b);  // 13 (penjumlahan)
+console.log(a - b);  // 7 (pengurangan)
+console.log(a * b);  // 30 (perkalian)
+console.log(a / b);  // 3.333 (pembagian)
+console.log(a % b);  // 1 (modulus/sisa bagi)
+console.log(a ** b); // 1000 (pangkat)
+
+// Increment & Decrement
+let x = 5;
+x++;  // x = 6
+x--;  // x = 5</pre>
+        
+        <h3>Operator Assignment:</h3>
+        <pre>let x = 10;
+x += 5;  // x = x + 5  → 15
+x -= 3;  // x = x - 3  → 12
+x *= 2;  // x = x * 2  → 24
+x /= 4;  // x = x / 4  → 6
+x %= 4;  // x = x % 4  → 2</pre>
+        
+        <h3>Operator Perbandingan:</h3>
+        <pre>console.log(5 == "5");   // true (nilai sama)
+console.log(5 === "5");  // false (nilai dan tipe harus sama)
+console.log(5 != "5");   // false
+console.log(5 !== "5");  // true
+console.log(5 > 3);      // true
+console.log(5 < 3);      // false
+console.log(5 >= 5);     // true
+console.log(5 <= 3);     // false</pre>
+        
+        <h3>Operator Logika:</h3>
+        <pre>let x = true, y = false;
+
+console.log(x && y);  // false (AND)
+console.log(x || y);  // true (OR)
+console.log(!x);      // false (NOT)</pre>
+        
+        <h2>7. String Methods</h2>
+        <pre>let text = "Hello World";
+
+// Length
+console.log(text.length); // 11
+
+// Uppercase & Lowercase
+console.log(text.toUpperCase()); // "HELLO WORLD"
+console.log(text.toLowerCase()); // "hello world"
+
+// Substring
+console.log(text.substring(0, 5)); // "Hello"
+console.log(text.slice(0, 5));     // "Hello"
+
+// Replace
+console.log(text.replace("World", "JavaScript")); // "Hello JavaScript"
+
+// Split
+console.log(text.split(" ")); // ["Hello", "World"]
+
+// Trim
+let text2 = "  Hello  ";
+console.log(text2.trim()); // "Hello"
+
+// Includes
+console.log(text.includes("World")); // true
+
+// StartsWith & EndsWith
+console.log(text.startsWith("Hello")); // true
+console.log(text.endsWith("World"));   // true
+
+// Repeat
+console.log("Ha".repeat(3)); // "HaHaHa"
+
+// Template Literal
+let nama = "Budi";
+let umur = 25;
+console.log(`Nama: ${nama}, Umur: ${umur}`);</pre>
+        
+        <h2>8. Percabangan (Conditional)</h2>
+        <h3>If-Else:</h3>
+        <pre>let nilai = 75;
+
+if (nilai >= 80) {
+    console.log("A");
+} else if (nilai >= 70) {
+    console.log("B");
+} else if (nilai >= 60) {
+    console.log("C");
+} else {
+    console.log("D");
+}</pre>
+        
+        <h3>Ternary Operator:</h3>
+        <pre>let umur = 20;
+let status = (umur >= 17) ? "Dewasa" : "Anak-anak";
+console.log(status); // "Dewasa"</pre>
+        
+        <h3>Switch:</h3>
+        <pre>let hari = 3;
+
+switch (hari) {
+    case 1:
+        console.log("Senin");
+        break;
+    case 2:
+        console.log("Selasa");
+        break;
+    case 3:
+        console.log("Rabu");
+        break;
+    default:
+        console.log("Hari tidak valid");
+}</pre>
+        
+        <h2>9. Perulangan (Loop)</h2>
+        <h3>For Loop:</h3>
+        <pre>for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+// Output: 1 2 3 4 5</pre>
+        
+        <h3>While Loop:</h3>
+        <pre>let i = 1;
+while (i <= 5) {
+    console.log(i);
+    i++;
+}</pre>
+        
+        <h3>Do-While Loop:</h3>
+        <pre>let i = 1;
+do {
+    console.log(i);
+    i++;
+} while (i <= 5);</pre>
+        
+        <h3>For-Of (Array):</h3>
+        <pre>let buah = ["Apel", "Jeruk", "Mangga"];
+for (let item of buah) {
+    console.log(item);
+}</pre>
+        
+        <h3>For-In (Object):</h3>
+        <pre>let orang = {nama: "Budi", umur: 25};
+for (let key in orang) {
+    console.log(key + ": " + orang[key]);
+}</pre>
+        
+        <h3>Break & Continue:</h3>
+        <pre>for (let i = 1; i <= 10; i++) {
+    if (i === 5) continue; // skip 5
+    if (i === 8) break;    // stop di 8
+    console.log(i);
+}
+// Output: 1 2 3 4 6 7</pre>
+        
+        <h2>10. Function</h2>
+        <h3>Function Declaration:</h3>
+        <pre>function sapa(nama) {
+    return "Hello, " + nama;
+}
+console.log(sapa("Budi")); // "Hello, Budi"</pre>
+        
+        <h3>Function Expression:</h3>
+        <pre>const tambah = function(a, b) {
+    return a + b;
+};
+console.log(tambah(5, 3)); // 8</pre>
+        
+        <h3>Arrow Function:</h3>
+        <pre>const kali = (a, b) => a * b;
+console.log(kali(5, 3)); // 15
+
+// Arrow function dengan body
+const cekGanjil = (num) => {
+    if (num % 2 === 1) {
+        return true;
+    }
+    return false;
+};</pre>
+        
+        <h3>Default Parameter:</h3>
+        <pre>function sapa(nama = "Tamu") {
+    return "Hello, " + nama;
+}
+console.log(sapa());        // "Hello, Tamu"
+console.log(sapa("Budi"));  // "Hello, Budi"</pre>
+        
+        <h2>11. Array</h2>
+        <h3>Membuat Array:</h3>
+        <pre>let buah = ["Apel", "Jeruk", "Mangga"];
+let angka = [1, 2, 3, 4, 5];
+let campur = ["Teks", 123, true, null];</pre>
+        
+        <h3>Akses Array:</h3>
+        <pre>console.log(buah[0]); // "Apel"
+console.log(buah[1]); // "Jeruk"
+console.log(buah.length); // 3</pre>
+        
+        <h3>Array Methods:</h3>
+        <pre>let arr = [1, 2, 3];
+
+// Push - tambah di akhir
+arr.push(4); // [1, 2, 3, 4]
+
+// Pop - hapus dari akhir
+arr.pop(); // [1, 2, 3]
+
+// Unshift - tambah di awal
+arr.unshift(0); // [0, 1, 2, 3]
+
+// Shift - hapus dari awal
+arr.shift(); // [1, 2, 3]
+
+// Splice - hapus/tambah di tengah
+arr.splice(1, 1); // hapus index 1, [1, 3]
+arr.splice(1, 0, 2); // tambah di index 1, [1, 2, 3]
+
+// Slice - ambil sebagian array
+let arr2 = arr.slice(0, 2); // [1, 2]
+
+// Join - gabung jadi string
+console.log(arr.join("-")); // "1-2-3"
+
+// Concat - gabung array
+let arr3 = arr.concat([4, 5]); // [1, 2, 3, 4, 5]
+
+// IndexOf - cari index
+console.log(arr.indexOf(2)); // 1
+
+// Includes - cek ada/tidak
+console.log(arr.includes(2)); // true
+
+// Reverse - balik urutan
+arr.reverse(); // [3, 2, 1]
+
+// Sort - urutkan
+arr.sort(); // [1, 2, 3]</pre>
+        
+        <h3>Array Higher-Order Functions:</h3>
+        <pre>let angka = [1, 2, 3, 4, 5];
+
+// Map - transform setiap element
+let kali2 = angka.map(x => x * 2);
+console.log(kali2); // [2, 4, 6, 8, 10]
+
+// Filter - filter berdasarkan kondisi
+let genap = angka.filter(x => x % 2 === 0);
+console.log(genap); // [2, 4]
+
+// Reduce - gabung jadi satu nilai
+let total = angka.reduce((sum, x) => sum + x, 0);
+console.log(total); // 15
+
+// Find - cari element pertama yang cocok
+let hasil = angka.find(x => x > 3);
+console.log(hasil); // 4
+
+// FindIndex - cari index pertama yang cocok
+let index = angka.findIndex(x => x > 3);
+console.log(index); // 3
+
+// Some - cek apakah ada yang cocok
+console.log(angka.some(x => x > 4)); // true
+
+// Every - cek apakah semua cocok
+console.log(angka.every(x => x > 0)); // true
+
+// ForEach - loop tanpa return
+angka.forEach(x => console.log(x));</pre>
+        
+        <h2>12. Object</h2>
+        <h3>Membuat Object:</h3>
+        <pre>let orang = {
+    nama: "Budi",
+    umur: 25,
+    kota: "Jakarta",
+    menikah: false
+};
+
+// Akses property
+console.log(orang.nama);     // "Budi"
+console.log(orang["umur"]);  // 25
+
+// Tambah property
+orang.pekerjaan = "Developer";
+
+// Hapus property
+delete orang.menikah;
+
+// Method dalam object
+let user = {
+    nama: "Budi",
+    sapa: function() {
+        return "Hello, " + this.nama;
+    }
+};
+console.log(user.sapa()); // "Hello, Budi"</pre>
+        
+        <h3>Object Methods:</h3>
+        <pre>let obj = {a: 1, b: 2, c: 3};
+
+// Keys - ambil semua key
+console.log(Object.keys(obj)); // ["a", "b", "c"]
+
+// Values - ambil semua value
+console.log(Object.values(obj)); // [1, 2, 3]
+
+// Entries - ambil key-value pairs
+console.log(Object.entries(obj)); // [["a",1], ["b",2], ["c",3]]
+
+// Assign - gabung object
+let obj2 = {d: 4};
+let gabung = Object.assign({}, obj, obj2);
+console.log(gabung); // {a:1, b:2, c:3, d:4}
+
+// Spread operator
+let gabung2 = {...obj, ...obj2};
+console.log(gabung2); // {a:1, b:2, c:3, d:4}</pre>
+        
+        <h3>Destructuring:</h3>
+        <pre>// Object destructuring
+let {nama, umur} = {nama: "Budi", umur: 25};
+console.log(nama); // "Budi"
+
+// Array destructuring
+let [a, b, c] = [1, 2, 3];
+console.log(a); // 1</pre>
+        
+        <h2>13. DOM Manipulation</h2>
+        <h3>Selecting Elements:</h3>
+        <pre>// By ID
+let elem = document.getElementById("myId");
+
+// By Class
+let elems = document.getElementsByClassName("myClass");
+
+// By Tag
+let divs = document.getElementsByTagName("div");
+
+// Query Selector (modern)
+let elem2 = document.querySelector(".myClass");
+let elems2 = document.querySelectorAll(".myClass");</pre>
+        
+        <h3>Mengubah Content:</h3>
+        <pre>// Text content
+elem.textContent = "Teks baru";
+
+// HTML content
+elem.innerHTML = "&lt;strong&gt;Teks tebal&lt;/strong&gt;";
+
+// Attribute
+elem.setAttribute("class", "active");
+elem.getAttribute("class");
+elem.removeAttribute("class");</pre>
+        
+        <h3>Mengubah Style:</h3>
+        <pre>elem.style.color = "red";
+elem.style.fontSize = "20px";
+elem.style.backgroundColor = "yellow";
+
+// Add/Remove class
+elem.classList.add("active");
+elem.classList.remove("active");
+elem.classList.toggle("active");
+elem.classList.contains("active");</pre>
+        
+        <h3>Membuat & Menghapus Element:</h3>
+        <pre>// Buat element baru
+let div = document.createElement("div");
+div.textContent = "Element baru";
+div.className = "box";
+
+// Tambahkan ke DOM
+document.body.appendChild(div);
+
+// Insert sebelum element
+parent.insertBefore(div, referenceNode);
+
+// Hapus element
+div.remove();
+// atau
+parent.removeChild(div);</pre>
+        
+        <h2>14. Events</h2>
+        <h3>Event Listener:</h3>
+        <pre>// Click event
+elem.addEventListener("click", function() {
+    console.log("Diklik!");
+});
+
+// Arrow function
+elem.addEventListener("click", () => {
+    console.log("Diklik!");
+});
+
+// Event object
+elem.addEventListener("click", (e) => {
+    console.log(e.target); // element yang diklik
+    console.log(e.type);   // "click"
+    e.preventDefault();    // cancel default action
+});</pre>
+        
+        <h3>Jenis Events:</h3>
+        <pre>// Mouse events
+elem.addEventListener("click", handler);
+elem.addEventListener("dblclick", handler);
+elem.addEventListener("mouseenter", handler);
+elem.addEventListener("mouseleave", handler);
+elem.addEventListener("mousemove", handler);
+
+// Keyboard events
+document.addEventListener("keydown", handler);
+document.addEventListener("keyup", handler);
+document.addEventListener("keypress", handler);
+
+// Form events
+form.addEventListener("submit", handler);
+input.addEventListener("input", handler);
+input.addEventListener("change", handler);
+input.addEventListener("focus", handler);
+input.addEventListener("blur", handler);
+
+// Window events
+window.addEventListener("load", handler);
+window.addEventListener("resize", handler);
+window.addEventListener("scroll", handler);</pre>
+        
+        <h3>Remove Event Listener:</h3>
+        <pre>function handler() {
+    console.log("Event!");
+}
+elem.addEventListener("click", handler);
+elem.removeEventListener("click", handler);</pre>
+        
+        <h2>15. Timing Functions</h2>
+        <pre>// SetTimeout - jalankan sekali setelah delay
+setTimeout(() => {
+    console.log("Setelah 2 detik");
+}, 2000);
+
+// SetInterval - jalankan berulang
+let interval = setInterval(() => {
+    console.log("Setiap 1 detik");
+}, 1000);
+
+// Clear interval
+clearInterval(interval);
+
+// Clear timeout
+let timeout = setTimeout(() => {}, 2000);
+clearTimeout(timeout);</pre>
+        
+        <h2>16. JSON</h2>
+        <pre>// Object ke JSON string
+let obj = {nama: "Budi", umur: 25};
+let json = JSON.stringify(obj);
+console.log(json); // '{"nama":"Budi","umur":25}'
+
+// JSON string ke Object
+let jsonStr = '{"nama":"Budi","umur":25}';
+let obj2 = JSON.parse(jsonStr);
+console.log(obj2.nama); // "Budi"</pre>
+        
+        <h2>17. Error Handling</h2>
+        <pre>// Try-Catch
+try {
+    let result = riskyFunction();
+    console.log(result);
+} catch (error) {
+    console.log("Error:", error.message);
+} finally {
+    console.log("Selalu dijalankan");
+}
+
+// Throw error
+function cekUmur(umur) {
+    if (umur < 0) {
+        throw new Error("Umur tidak boleh negatif");
+    }
+    return true;
+}</pre>
+        
+        <h2>18. Local Storage</h2>
+        <pre>// Simpan data
+localStorage.setItem("nama", "Budi");
+localStorage.setItem("user", JSON.stringify({nama: "Budi"}));
+
+// Ambil data
+let nama = localStorage.getItem("nama");
+let user = JSON.parse(localStorage.getItem("user"));
+
+// Hapus data
+localStorage.removeItem("nama");
+
+// Hapus semua
+localStorage.clear();</pre>
+        
+        <h2>19. Fetch API (AJAX)</h2>
+        <pre>// GET request
+fetch("https://api.example.com/data")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.log("Error:", error);
+    });
+
+// POST request
+fetch("https://api.example.com/data", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({nama: "Budi", umur: 25})
+})
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
+
+// Async/Await (modern)
+async function getData() {
+    try {
+        const response = await fetch("https://api.example.com/data");
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}</pre>
+        
+        <h2>20. ES6+ Features</h2>
+        <h3>Spread Operator:</h3>
+        <pre>let arr1 = [1, 2, 3];
+let arr2 = [...arr1, 4, 5]; // [1, 2, 3, 4, 5]
+
+let obj1 = {a: 1, b: 2};
+let obj2 = {...obj1, c: 3}; // {a: 1, b: 2, c: 3}</pre>
+        
+        <h3>Rest Parameter:</h3>
+        <pre>function sum(...numbers) {
+    return numbers.reduce((total, n) => total + n, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10</pre>
+        
+        <h3>Promises:</h3>
+        <pre>let promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Sukses!");
+    }, 1000);
+});
+
+promise
+    .then(result => console.log(result))
+    .catch(error => console.log(error));</pre>
+        
+        <h3>Async/Await:</h3>
+        <pre>async function fetchData() {
+    try {
+        let result = await someAsyncFunction();
+        console.log(result);
+    } catch (error) {
+        console.log(error);
+    }
+}</pre>
+        
+        <h2>21. Tips JavaScript</h2>
+        <ul>
+            <li>Gunakan const & let, hindari var</li>
+            <li>Gunakan === instead of ==</li>
+            <li>Gunakan arrow function untuk code yang lebih clean</li>
+            <li>Gunakan template literals untuk string interpolation</li>
+            <li>Gunakan array methods (map, filter, reduce) daripada loop</li>
+            <li>Selalu handle error dengan try-catch</li>
+            <li>Gunakan async/await untuk code yang lebih readable</li>
+            <li>Buat nama variabel & function yang descriptive</li>
+            <li>Test code di console browser (F12)</li>
+            <li>Pelajari DevTools untuk debugging</li>
+        </ul>
+        
+        <h2>22. Contoh Program Sederhana</h2>
+        <pre>// To-Do List
+let todos = [];
+
+function addTodo(text) {
+    todos.push({
+        id: Date.now(),
+        text: text,
+        completed: false
+    });
+    renderTodos();
+}
+
+function toggleTodo(id) {
+    const todo = todos.find(t => t.id === id);
+    if (todo) {
+        todo.completed = !todo.completed;
+        renderTodos();
+    }
+}
+
+function deleteTodo(id) {
+    todos = todos.filter(t => t.id !== id);
+    renderTodos();
+}
+
+function renderTodos() {
+    const list = document.getElementById("todoList");
+    list.innerHTML = todos.map(todo => `
+        &lt;li&gt;
+            &lt;input type="checkbox" 
+                   ${todo.completed ? 'checked' : ''} 
+                   onclick="toggleTodo(${todo.id})"&gt;
+            &lt;span style="${todo.completed ? 'text-decoration: line-through' : ''}"&gt;
+                ${todo.text}
+            &lt;/span&gt;
+            &lt;button onclick="deleteTodo(${todo.id})"&gt;Hapus&lt;/button&gt;
+        &lt;/li&gt;
+    `).join('');
+}</pre>
+    </div>
+</body>
+</html>

@@ -3,272 +3,452 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materi Lengkap HTML</title>
+    <title>Materi HTML Dasar</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.8; max-width: 900px; margin: 0 auto; padding: 20px; }
-        h1 { color: #2c3e50; text-align: center; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
-        h2 { color: #2980b9; margin-top: 30px; }
-        h3 { color: #34495e; margin-top: 20px; }
-        .konsep { background: #ecf0f1; padding: 15px; border-left: 4px solid #3498db; margin: 15px 0; }
-        .contoh { background: #f8f9fa; border: 1px solid #ddd; padding: 15px; margin: 15px 0; border-radius: 5px; }
-        code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-family: 'Courier New', monospace; }
-        pre { background: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        .tabel { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        .tabel th, .tabel td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        .tabel th { background-color: #3498db; color: white; }
+        body {
+            margin: 0;
+            padding: 20px;
+        }
+        .konten {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
     </style>
 </head>
 <body>
-    <h1>Materi Lengkap HTML</h1>
-    
-    <div class="konsep">
-        <h2>Apa itu HTML?</h2>
-        <p><strong>HTML (HyperText Markup Language)</strong> adalah bahasa markup standar untuk membuat halaman web. HTML bukanlah bahasa pemrograman, melainkan bahasa markup yang menggunakan tag untuk menandai elemen-elemen di halaman web.</p>
-        <p>HTML digunakan untuk:</p>
-        <ul>
-            <li>Membuat struktur dasar halaman web</li>
-            <li>Menyusun konten (teks, gambar, video)</li>
-            <li>Membuat link antar halaman</li>
-            <li>Membangun formulir interaktif</li>
-        </ul>
+<header style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 30px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+        <div style="flex: 1; min-width: 200px;">
+            <a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 5px; margin-bottom: 10px;">
+                ← Kembali
+            </a>
+            <h1 style="color: white; font-size: 28px; margin: 0; font-weight: 700; line-height: 1.3;">Materi HTML</h1>
+            <p style="color: rgba(255,255,255,0.9); margin: 8px 0 0 0; font-size: 14px;">
+                <span>Oleh: Nama Fahmi</span> • <span>19 November 2025</span> • <span>5 menit baca</span>
+            </p>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <button style="padding: 10px 20px; border: 2px solid white; border-radius: 8px; background: transparent; color: white; font-weight: 600; cursor: pointer;">Bagikan</button>
+            <button style="padding: 10px 20px; border: none; border-radius: 8px; background: white; color: #667eea; font-weight: 600; cursor: pointer;">Simpan</button>
+        </div>
     </div>
-
-    <h2>Struktur Dasar HTML</h2>
-    <pre><code>&lt;!DOCTYPE html&gt;
+</header>
+    <button id="logoutBtn" class="btn-secondary">Keluar</button>
+    <div class="konten">
+        <h2>1. Pengenalan HTML</h2>
+        <p>HTML (HyperText Markup Language) adalah bahasa markup standar untuk membuat halaman web.</p>
+        <p>HTML menggunakan tag untuk menandai dan mengatur struktur konten pada halaman web.</p>
+        
+        <h2>2. Struktur Dasar HTML</h2>
+        <pre>&lt;!DOCTYPE html&gt;
 &lt;html lang="id"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;title&gt;Judul Halaman&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;!-- Konten halaman web --&gt;
+    &lt;!-- Konten di sini --&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-    
-    <div class="konsep">
-        <h3>Penjelasan Struktur:</h3>
+&lt;/html&gt;</pre>
+        
+        <h2>3. Tag HTML Dasar</h2>
+        <h3>Heading (Judul):</h3>
+        <pre>&lt;h1&gt;Heading 1 - Paling Besar&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6 - Paling Kecil&lt;/h6&gt;</pre>
+        
+        <h3>Paragraf:</h3>
+        <pre>&lt;p&gt;Ini adalah paragraf.&lt;/p&gt;</pre>
+        
+        <h3>Line Break:</h3>
+        <pre>Baris pertama&lt;br&gt;
+Baris kedua</pre>
+        
+        <h3>Horizontal Rule:</h3>
+        <pre>&lt;hr&gt;</pre>
+        
+        <h2>4. Text Formatting</h2>
         <ul>
-            <li><code>&lt;!DOCTYPE html&gt;</code>: Deklarasi tipe dokumen HTML5</li>
-            <li><code>&lt;html&gt;</code>: Elemen root dari dokumen HTML</li>
-            <li><code>&lt;head&gt;</code>: Berisi metadata (informasi tentang dokumen)</li>
-            <li><code>&lt;meta charset="UTF-8"&gt;</code>: Menentukan encoding karakter</li>
-            <li><code>&lt;title&gt;</code>: Judul halaman yang muncul di tab browser</li>
-            <li><code>&lt;body&gt;</code>: Berisi semua konten yang terlihat di halaman web</li>
+            <li>&lt;strong&gt; atau &lt;b&gt; - teks tebal</li>
+            <li>&lt;em&gt; atau &lt;i&gt; - teks miring</li>
+            <li>&lt;u&gt; - teks bergaris bawah</li>
+            <li>&lt;mark&gt; - teks di-highlight</li>
+            <li>&lt;small&gt; - teks kecil</li>
+            <li>&lt;del&gt; - teks dicoret</li>
+            <li>&lt;ins&gt; - teks yang disisipkan</li>
+            <li>&lt;sub&gt; - subscript (H₂O)</li>
+            <li>&lt;sup&gt; - superscript (x²)</li>
         </ul>
-    </div>
-
-    <h2>Elemen-elemen HTML Penting</h2>
-    
-    <h3>1. Elemen Teks</h3>
-    <table class="tabel">
-        <tr>
-            <th>Tag</th>
-            <th>Fungsi</th>
-            <th>Contoh</th>
-        </tr>
-        <tr>
-            <td><code>&lt;h1&gt; - &lt;h6&gt;</code></td>
-            <td>Heading (judul)</td>
-            <td><code>&lt;h1&gt;Judul Utama&lt;/h1&gt;</code></td>
-        </tr>
-        <tr>
-            <td><code>&lt;p&gt;</code></td>
-            <td>Paragraf</td>
-            <td><code>&lt;p&gt;Ini paragraf&lt;/p&gt;</code></td>
-        </tr>
-        <tr>
-            <td><code>&lt;strong&gt;</code></td>
-            <td>Teks tebal (penting)</td>
-            <td><code>&lt;strong&gt;Penting&lt;/strong&gt;</code></td>
-        </tr>
-        <tr>
-            <td><code>&lt;em&gt;</code></td>
-            <td>Teks miring (penekanan)</td>
-            <td><code>&lt;em&gt;Penekanan&lt;/em&gt;</code></td>
-        </tr>
-        <tr>
-            <td><code>&lt;br&gt;</code></td>
-            <td>Line break (baris baru)</td>
-            <td><code>Teks 1&lt;br&gt;Teks 2</code></td>
-        </tr>
-    </table>
-
-    <h3>2. Elemen List</h3>
-    <div class="contoh">
-        <h4>Ordered List (Berurutan):</h4>
-        <pre><code>&lt;ol&gt;
-    &lt;li&gt;Item pertama&lt;/li&gt;
-    &lt;li&gt;Item kedua&lt;/li&gt;
-    &lt;li&gt;Item ketiga&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
         
-        <h4>Unordered List (Tidak Berurutan):</h4>
-        <pre><code>&lt;ul&gt;
-    &lt;li&gt;Item A&lt;/li&gt;
-    &lt;li&gt;Item B&lt;/li&gt;
-    &lt;li&gt;Item C&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-    </div>
-
-    <h3>3. Elemen Link dan Gambar</h3>
-    <div class="contoh">
-        <h4>Link:</h4>
-        <pre><code>&lt;a href="https://example.com"&gt;Kunjungi Website&lt;/a&gt;</code></pre>
+        <h3>Contoh:</h3>
+        <pre>&lt;p&gt;Ini &lt;strong&gt;teks tebal&lt;/strong&gt; dan &lt;em&gt;teks miring&lt;/em&gt;&lt;/p&gt;</pre>
         
-        <h4>Gambar:</h4>
-        <pre><code>&lt;img src="gambar.jpg" alt="Deskripsi gambar" width="300"&gt;</code></pre>
-    </div>
+        <h2>5. Link (Hyperlink)</h2>
+        <pre>&lt;a href="https://google.com"&gt;Link ke Google&lt;/a&gt;
+&lt;a href="halaman.html"&gt;Link ke halaman lain&lt;/a&gt;
+&lt;a href="#bagian"&gt;Link ke bagian di halaman yang sama&lt;/a&gt;
+&lt;a href="mailto:email@email.com"&gt;Link Email&lt;/a&gt;
+&lt;a href="tel:+628123456789"&gt;Link Telepon&lt;/a&gt;
 
-    <h3>4. Elemen Formulir</h3>
-    <div class="contoh">
-        <p>Formulir digunakan untuk mengumpulkan data dari pengguna:</p>
-        <pre><code>&lt;form action="proses.php" method="post"&gt;
-    &lt;label for="nama"&gt;Nama:&lt;/label&gt;
-    &lt;input type="text" id="nama" name="nama"&gt;
-    
-    &lt;label for="email"&gt;Email:&lt;/label&gt;
-    &lt;input type="email" id="email" name="email"&gt;
-    
-    &lt;label for="password"&gt;Password:&lt;/label&gt;
-    &lt;input type="password" id="password" name="password"&gt;
-    
-    &lt;button type="submit"&gt;Kirim&lt;/button&gt;
-&lt;/form&gt;</code></pre>
-    </div>
+&lt;!-- Target --&gt;
+&lt;a href="url" target="_blank"&gt;Buka di tab baru&lt;/a&gt;
+&lt;a href="url" target="_self"&gt;Buka di tab yang sama&lt;/a&gt;</pre>
+        
+        <h2>6. Image (Gambar)</h2>
+        <pre>&lt;img src="gambar.jpg" alt="Deskripsi gambar"&gt;
+&lt;img src="gambar.jpg" alt="Deskripsi" width="300" height="200"&gt;
 
-    <h3>5. Elemen Tabel</h3>
-    <div class="contoh">
-        <pre><code>&lt;table&gt;
+&lt;!-- Gambar dengan link --&gt;
+&lt;a href="url"&gt;
+    &lt;img src="gambar.jpg" alt="Deskripsi"&gt;
+&lt;/a&gt;</pre>
+        
+        <h2>7. List (Daftar)</h2>
+        <h3>Unordered List (Bullet):</h3>
+        <pre>&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;</pre>
+        
+        <h3>Ordered List (Nomor):</h3>
+        <pre>&lt;ol&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ol&gt;</pre>
+        
+        <h3>Description List:</h3>
+        <pre>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+        
+        <h2>8. Table (Tabel)</h2>
+        <pre>&lt;table&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;th&gt;Nama&lt;/th&gt;
-            &lt;th&gt;Usia&lt;/th&gt;
+            &lt;th&gt;Umur&lt;/th&gt;
+            &lt;th&gt;Kota&lt;/th&gt;
         &lt;/tr&gt;
     &lt;/thead&gt;
     &lt;tbody&gt;
         &lt;tr&gt;
-            &lt;td&gt;Andi&lt;/td&gt;
+            &lt;td&gt;Budi&lt;/td&gt;
             &lt;td&gt;25&lt;/td&gt;
+            &lt;td&gt;Jakarta&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
-            &lt;td&gt;Budi&lt;/td&gt;
-            &lt;td&gt;30&lt;/td&gt;
+            &lt;td&gt;Ani&lt;/td&gt;
+            &lt;td&gt;23&lt;/td&gt;
+            &lt;td&gt;Bandung&lt;/td&gt;
         &lt;/tr&gt;
     &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-    </div>
+&lt;/table&gt;</pre>
+        
+        <h3>Colspan & Rowspan:</h3>
+        <pre>&lt;td colspan="2"&gt;Gabung 2 kolom&lt;/td&gt;
+&lt;td rowspan="2"&gt;Gabung 2 baris&lt;/td&gt;</pre>
+        
+        <h2>9. Form</h2>
+        <pre>&lt;form action="proses.php" method="post"&gt;
+    &lt;!-- Input Text --&gt;
+    &lt;label for="nama"&gt;Nama:&lt;/label&gt;
+    &lt;input type="text" id="nama" name="nama" required&gt;
+    
+    &lt;!-- Input Email --&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+    
+    &lt;!-- Input Password --&gt;
+    &lt;label for="password"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password" name="password"&gt;
+    
+    &lt;!-- Input Number --&gt;
+    &lt;label for="umur"&gt;Umur:&lt;/label&gt;
+    &lt;input type="number" id="umur" name="umur" min="1" max="100"&gt;
+    
+    &lt;!-- Input Date --&gt;
+    &lt;label for="tanggal"&gt;Tanggal:&lt;/label&gt;
+    &lt;input type="date" id="tanggal" name="tanggal"&gt;
+    
+    &lt;!-- Radio Button --&gt;
+    &lt;label&gt;Jenis Kelamin:&lt;/label&gt;
+    &lt;input type="radio" id="laki" name="gender" value="laki"&gt;
+    &lt;label for="laki"&gt;Laki-laki&lt;/label&gt;
+    &lt;input type="radio" id="perempuan" name="gender" value="perempuan"&gt;
+    &lt;label for="perempuan"&gt;Perempuan&lt;/label&gt;
+    
+    &lt;!-- Checkbox --&gt;
+    &lt;input type="checkbox" id="setuju" name="setuju"&gt;
+    &lt;label for="setuju"&gt;Saya setuju&lt;/label&gt;
+    
+    &lt;!-- Select Dropdown --&gt;
+    &lt;label for="kota"&gt;Kota:&lt;/label&gt;
+    &lt;select id="kota" name="kota"&gt;
+        &lt;option value=""&gt;Pilih Kota&lt;/option&gt;
+        &lt;option value="jakarta"&gt;Jakarta&lt;/option&gt;
+        &lt;option value="bandung"&gt;Bandung&lt;/option&gt;
+        &lt;option value="surabaya"&gt;Surabaya&lt;/option&gt;
+    &lt;/select&gt;
+    
+    &lt;!-- Textarea --&gt;
+    &lt;label for="pesan"&gt;Pesan:&lt;/label&gt;
+    &lt;textarea id="pesan" name="pesan" rows="4" cols="50"&gt;&lt;/textarea&gt;
+    
+    &lt;!-- File Upload --&gt;
+    &lt;label for="file"&gt;Upload File:&lt;/label&gt;
+    &lt;input type="file" id="file" name="file"&gt;
+    
+    &lt;!-- Button --&gt;
+    &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+    &lt;button type="reset"&gt;Reset&lt;/button&gt;
+&lt;/form&gt;</pre>
+        
+        <h2>10. Semantic HTML</h2>
+        <pre>&lt;header&gt;Header/Kepala halaman&lt;/header&gt;
+&lt;nav&gt;Navigasi menu&lt;/nav&gt;
+&lt;main&gt;Konten utama&lt;/main&gt;
+&lt;article&gt;Artikel atau konten mandiri&lt;/article&gt;
+&lt;section&gt;Bagian/seksi konten&lt;/section&gt;
+&lt;aside&gt;Konten samping/sidebar&lt;/aside&gt;
+&lt;footer&gt;Footer/Kaki halaman&lt;/footer&gt;</pre>
+        
+        <h3>Contoh Struktur:</h3>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Judul Website&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Judul Artikel&lt;/h2&gt;
+            &lt;p&gt;Konten artikel...&lt;/p&gt;
+        &lt;/article&gt;
+        
+        &lt;aside&gt;
+            &lt;h3&gt;Sidebar&lt;/h3&gt;
+            &lt;p&gt;Konten samping...&lt;/p&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2025 Website Saya&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        
+        <h2>11. Div & Span</h2>
+        <pre>&lt;!-- Div: Block-level container --&gt;
+&lt;div class="container"&gt;
+    &lt;p&gt;Konten di dalam div&lt;/p&gt;
+&lt;/div&gt;
 
-    <h2>HTML5 Semantic Elements</h2>
-    <div class="konsep">
-        <p>HTML5 memperkenalkan elemen semantik yang memberikan makna pada struktur halaman:</p>
+&lt;!-- Span: Inline container --&gt;
+&lt;p&gt;Ini adalah &lt;span style="color: red;"&gt;teks merah&lt;/span&gt; di paragraf.&lt;/p&gt;</pre>
+        
+        <h2>12. Media Elements</h2>
+        <h3>Video:</h3>
+        <pre>&lt;video width="320" height="240" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    Browser tidak mendukung video.
+&lt;/video&gt;</pre>
+        
+        <h3>Audio:</h3>
+        <pre>&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    Browser tidak mendukung audio.
+&lt;/audio&gt;</pre>
+        
+        <h3>Iframe:</h3>
+        <pre>&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+        width="560" height="315"&gt;&lt;/iframe&gt;</pre>
+        
+        <h2>13. Meta Tags</h2>
+        <pre>&lt;head&gt;
+    &lt;!-- Charset --&gt;
+    &lt;meta charset="UTF-8"&gt;
+    
+    &lt;!-- Viewport untuk responsive --&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    
+    &lt;!-- Deskripsi untuk SEO --&gt;
+    &lt;meta name="description" content="Deskripsi website"&gt;
+    
+    &lt;!-- Keywords --&gt;
+    &lt;meta name="keywords" content="html, css, javascript"&gt;
+    
+    &lt;!-- Author --&gt;
+    &lt;meta name="author" content="Nama Anda"&gt;
+    
+    &lt;!-- Refresh otomatis --&gt;
+    &lt;meta http-equiv="refresh" content="30"&gt;
+&lt;/head&gt;</pre>
+        
+        <h2>14. HTML Entities</h2>
         <ul>
-            <li><code>&lt;header&gt;</code>: Bagian header halaman</li>
-            <li><code>&lt;nav&gt;</code>: Navigasi</li>
-            <li><code>&lt;main&gt;</code>: Konten utama</li>
-            <li><code>&lt;section&gt;</code>: Bagian konten</li>
-            <li><code>&lt;article&gt;</code>: Konten mandiri</li>
-            <li><code>&lt;aside&gt;</code>: Konten samping (sidebar)</li>
-            <li><code>&lt;footer&gt;</code>: Bagian footer</li>
+            <li>&amp;lt; - kurang dari (&lt;)</li>
+            <li>&amp;gt; - lebih dari (&gt;)</li>
+            <li>&amp;amp; - ampersand (&amp;)</li>
+            <li>&amp;quot; - tanda kutip (")</li>
+            <li>&amp;apos; - apostrof (')</li>
+            <li>&amp;copy; - copyright (©)</li>
+            <li>&amp;reg; - registered (®)</li>
+            <li>&amp;nbsp; - non-breaking space</li>
         </ul>
-    </div>
-
-    <h2>Atribut HTML</h2>
-    <div class="contoh">
-        <p>Atribut memberikan informasi tambahan tentang elemen:</p>
-        <table class="tabel">
-            <tr>
-                <th>Atribut</th>
-                <th>Deskripsi</th>
-                <th>Contoh</th>
-            </tr>
-            <tr>
-                <td><code>id</code></td>
-                <td>Identifier unik elemen</td>
-                <td><code>&lt;div id="header"&gt;</code></td>
-            </tr>
-            <tr>
-                <td><code>class</code></td>
-                <td>Nama kelas untuk styling</td>
-                <td><code>&lt;p class="intro"&gt;</code></td>
-            </tr>
-            <tr>
-                <td><code>src</code></td>
-                <td>Sumber file (gambar, video)</td>
-                <td><code>&lt;img src="logo.png"&gt;</code></td>
-            </tr>
-            <tr>
-                <td><code>href</code></td>
-                <td>URL link</td>
-                <td><code>&lt;a href="page.html"&gt;</code></td>
-            </tr>
-            <tr>
-                <td><code>alt</code></td>
-                <td>Teks alternatif gambar</td>
-                <td><code>&lt;img alt="Logo"&gt;</code></td>
-            </tr>
-        </table>
-    </div>
-
-    <h2>HTML Entities</h2>
-    <div class="contoh">
-        <p>Karakter khusus dalam HTML:</p>
-        <table class="tabel">
-            <tr>
-                <th>Karakter</th>
-                <th>Entity</th>
-                <th>Deskripsi</th>
-            </tr>
-            <tr>
-                <td>&lt;</td>
-                <td><code>&amp;lt;</code></td>
-                <td>Kurang dari</td>
-            </tr>
-            <tr>
-                <td>&gt;</td>
-                <td><code>&amp;gt;</code></td>
-                <td>Lebih dari</td>
-            </tr>
-            <tr>
-                <td>&amp;</td>
-                <td><code>&amp;amp;</code></td>
-                <td>Ampersand</td>
-            </tr>
-            <tr>
-                <td>"</td>
-                <td><code>&amp;quot;</code></td>
-                <td>Tanda kutip</td>
-            </tr>
-            <tr>
-                <td>©</td>
-                <td><code>&amp;copy;</code></td>
-                <td>Hak cipta</td>
-            </tr>
-        </table>
-    </div>
-
-    <h2>Validasi HTML</h2>
-    <div class="konsep">
-        <p>Validasi HTML penting untuk:</p>
+        
+        <h2>15. HTML Atribut Global</h2>
         <ul>
-            <li>Memastikan kode sesuai standar W3C</li>
-            <li>Meningkatkan kompatibilitas browser</li>
-            <li>Meningkatkan SEO</li>
-            <li>Membantu aksesibilitas</li>
+            <li>id - identifier unik</li>
+            <li>class - untuk styling CSS</li>
+            <li>style - inline CSS</li>
+            <li>title - tooltip saat hover</li>
+            <li>lang - bahasa konten</li>
+            <li>hidden - menyembunyikan elemen</li>
+            <li>data-* - custom data attributes</li>
         </ul>
-        <p>Alat validasi: <a href="https://validator.w3.org/" target="_blank">W3C Markup Validation Service</a></p>
-    </div>
+        
+        <h3>Contoh:</h3>
+        <pre>&lt;div id="main" class="container" title="Ini tooltip" data-user="123"&gt;
+    Konten
+&lt;/div&gt;</pre>
+        
+        <h2>16. Blockquote & Code</h2>
+        <pre>&lt;!-- Kutipan --&gt;
+&lt;blockquote cite="sumber"&gt;
+    Ini adalah kutipan panjang.
+&lt;/blockquote&gt;
 
-    <h2>Kesimpulan</h2>
-    <div class="konsep">
-        <p>HTML adalah fondasi dari semua halaman web. Dengan memahami:</p>
+&lt;!-- Inline quote --&gt;
+&lt;p&gt;Dia berkata, &lt;q&gt;Ini kutipan pendek&lt;/q&gt;&lt;/p&gt;
+
+&lt;!-- Code --&gt;
+&lt;code&gt;let x = 10;&lt;/code&gt;
+
+&lt;!-- Pre-formatted text --&gt;
+&lt;pre&gt;
+Teks ini
+    mempertahankan
+        format aslinya
+&lt;/pre&gt;</pre>
+        
+        <h2>17. Details & Summary</h2>
+        <pre>&lt;details&gt;
+    &lt;summary&gt;Klik untuk membuka&lt;/summary&gt;
+    &lt;p&gt;Konten yang tersembunyi di sini.&lt;/p&gt;
+&lt;/details&gt;</pre>
+        
+        <h2>18. HTML5 Input Types</h2>
+        <pre>&lt;input type="text"&gt;      &lt;!-- Teks biasa --&gt;
+&lt;input type="email"&gt;     &lt;!-- Email --&gt;
+&lt;input type="password"&gt;  &lt;!-- Password --&gt;
+&lt;input type="number"&gt;    &lt;!-- Angka --&gt;
+&lt;input type="date"&gt;      &lt;!-- Tanggal --&gt;
+&lt;input type="time"&gt;      &lt;!-- Waktu --&gt;
+&lt;input type="datetime-local"&gt; &lt;!-- Tanggal & waktu --&gt;
+&lt;input type="month"&gt;     &lt;!-- Bulan --&gt;
+&lt;input type="week"&gt;      &lt;!-- Minggu --&gt;
+&lt;input type="color"&gt;     &lt;!-- Color picker --&gt;
+&lt;input type="range"&gt;     &lt;!-- Slider --&gt;
+&lt;input type="url"&gt;       &lt;!-- URL --&gt;
+&lt;input type="tel"&gt;       &lt;!-- Telepon --&gt;
+&lt;input type="search"&gt;    &lt;!-- Search box --&gt;</pre>
+        
+        <h2>19. Best Practices</h2>
         <ul>
-            <li>Struktur dasar dokumen HTML</li>
-            <li>Elemen-elemen penting dan penggunaannya</li>
-            <li>Atribut untuk memberikan informasi tambahan</li>
-            <li>Elemen semantik HTML5 untuk struktur yang baik</li>
-            <li>Praktik terbaik dalam penulisan HTML</li>
+            <li>Selalu gunakan DOCTYPE html</li>
+            <li>Gunakan semantic HTML untuk SEO yang baik</li>
+            <li>Tutup semua tag dengan benar</li>
+            <li>Gunakan lowercase untuk nama tag dan atribut</li>
+            <li>Selalu tambahkan atribut alt pada gambar</li>
+            <li>Gunakan indentasi yang konsisten</li>
+            <li>Validasi HTML dengan W3C Validator</li>
+            <li>Gunakan komentar untuk dokumentasi</li>
+            <li>Pisahkan konten (HTML) dari presentasi (CSS) dan behavior (JavaScript)</li>
         </ul>
-        <p>Anda dapat membuat halaman web yang terstruktur dengan baik dan siap untuk diberi gaya dengan CSS dan fungsionalitas dengan JavaScript atau PHP.</p>
+        
+        <h2>20. Komentar HTML</h2>
+        <pre>&lt;!-- Ini adalah komentar --&gt;
+&lt;!-- 
+Komentar 
+multi-line
+--&gt;</pre>
+        
+        <h2>21. Template HTML Lengkap</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta name="description" content="Deskripsi website"&gt;
+    &lt;meta name="keywords" content="keyword1, keyword2"&gt;
+    &lt;meta name="author" content="Nama Anda"&gt;
+    &lt;title&gt;Judul Halaman&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;link rel="icon" href="favicon.ico"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;section id="home"&gt;
+            &lt;h1&gt;Selamat Datang&lt;/h1&gt;
+            &lt;p&gt;Konten home...&lt;/p&gt;
+        &lt;/section&gt;
+        
+        &lt;section id="about"&gt;
+            &lt;h2&gt;Tentang Kami&lt;/h2&gt;
+            &lt;p&gt;Konten about...&lt;/p&gt;
+        &lt;/section&gt;
+        
+        &lt;section id="contact"&gt;
+            &lt;h2&gt;Kontak&lt;/h2&gt;
+            &lt;form action="submit.php" method="post"&gt;
+                &lt;input type="text" name="nama" placeholder="Nama" required&gt;
+                &lt;input type="email" name="email" placeholder="Email" required&gt;
+                &lt;textarea name="pesan" placeholder="Pesan" required&gt;&lt;/textarea&gt;
+                &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2025 Website . All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+    
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
     </div>
 </body>
 </html>
